@@ -111,5 +111,5 @@ def deletefile():
 #
 #
 # print(ocr_core('images/ocr_example_1.png'))
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
