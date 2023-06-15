@@ -6,6 +6,8 @@
 import os  # For File Manipulations like get paths, rename
 from datetime import datetime
 
+import pytz
+
 # import time
 try:
     from PIL import Image
@@ -73,11 +75,11 @@ def dashboard():
 
 
 def call(usert, f):
-    current = str(datetime.now().strftime("%H:%M:%S"))
+    current = str(datetime.now(pytz.timezone('Asia/Calcutta')).strftime("%H:%M:%S"))
     while (current != usert):
         # print(current)
         print(usert)
-        current = str(datetime.now().strftime("%H:%M:%S"))
+        current = str(datetime.now(pytz.timezone('Asia/Calcutta')).strftime("%H:%M:%S"))
     text = imgtotext(f)
     # deletefile()
     return text
